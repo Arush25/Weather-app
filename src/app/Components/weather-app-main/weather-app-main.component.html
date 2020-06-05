@@ -1,0 +1,28 @@
+<div id="idWeatherMain">
+    <!-- <div>
+        <input type="text" #UserInput placeholder="Enter city Name"><br>
+        <div>
+            <button (click)="getCity(UserInput.value)">Search</button><br>
+        </div>
+    </div> -->
+    <div *ngIf="WeatherData.isDay" class="WeatherAppRow">
+        <i class="fas fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!WeatherData.isDay" class="WeatherAppRow">
+        <i class="fas fa-3x fa-moon moon"></i>
+    </div>
+    <div class="WeatherAppRow cloudDiv">
+        <i class="fa fa-cloud fa-3x cloud"></i>
+    </div>
+     <div class="WeatherAppRow" style="font-size: 32px;margin-top: 5px;">{{WeatherData.temp_celcius}}<sup>o</sup></div>
+     <div class="WeatherAppRow" style="font-size: 12px;">{{WeatherData.temp_min}}<sup>o</sup>/{{WeatherData.temp_max}}<sup>o</sup></div>
+     <div class="WeatherAppRow" style="font-size: 12px;">Feels like: {{WeatherData.temp_feels_like}}<sup>o</sup></div>
+     <div class="WeatherAppRow" style="font-size: 25px; margin-top: 10px;">{{WeatherData.name}}</div>
+     <div class="WeatherAppRow" style="font-size: 12px;">Humidity: {{WeatherData.main.humidity}}%</div>
+</div>
+<div>
+    <input type="text" #UserInput placeholder="Enter city name">
+    <div>
+        <button (click)="getCity(UserInput.value)">Search</button>
+    </div>
+</div>
